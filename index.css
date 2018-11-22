@@ -1,12 +1,12 @@
 body{
-	background-color: grey;
+	background-color: blue;
 }
 
 h1{
 	font-size:55px;
 	text-align: center;
 	font-family:  Arial, Helvetica, sans-serif;
-	color: #3366ff;
+	color: yellow;
 	line-height: 3;
 }
 ul{
@@ -14,9 +14,9 @@ ul{
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #3366cc;
+    background-color: gray;
     position: fixed;
-    top: 0;
+    top:0;
     width: 100%;
 }
 
@@ -33,13 +33,19 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: #1112;
+    background-color: yellow;
+	color: blue;
 }
 
 .active {
-    background-color: #ff0000;
+    background-color: gray;
 }
+#searchBar{
 
+	float:right;
+	padding-top: 20px;
+	padding-right: 20px;
+}
 
 
 
