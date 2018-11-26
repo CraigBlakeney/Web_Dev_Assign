@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2018 at 08:02 PM
+-- Generation Time: Nov 26, 2018 at 09:22 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -56,7 +56,7 @@ INSERT INTO `dvd_info` (`item_ID`, `m_Title`, `m_Genre`, `m_PG`) VALUES
 CREATE TABLE `userinfo` (
   `userID` int(4) NOT NULL,
   `username` varchar(25) NOT NULL,
-  `password` varchar(30) CHARACTER SET ascii NOT NULL,
+  `password` varchar(60) NOT NULL,
   `email` varchar(50) CHARACTER SET ascii NOT NULL,
   `trn_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -66,10 +66,9 @@ CREATE TABLE `userinfo` (
 --
 
 INSERT INTO `userinfo` (`userID`, `username`, `password`, `email`, `trn_date`) VALUES
-(1, 'mansey7', 'qwerty123', 'c16334863@mydit.ie', '2018-11-26 18:06:31'),
-(3, 'craig12', 'ae56989709b02c9f5f6e5f0ce83b37', 'cblakeney@yahoo.com', '2018-11-26 19:08:33'),
-(4, 'PaulDavis', '08fb2e5e0db264128bb2e7802a2b84', 'paulDavis@yahoo.ie', '2018-11-26 19:09:18'),
-(5, 'craig123', '912ec803b2ce49e4a541068d495ab5', 'cblakeney1@yahoo.com', '2018-11-26 19:23:15');
+(8, 'Phil', 'd14ffd41334ec4b4b3f2c0d55c38be6f', 'asdfsdfsdsd@yahoo.ioe', '2018-11-26 20:27:15'),
+(9, 'mansey7', '3fc0a7acf087f549ac2b266baf94b8b1', 'c16334863@mydit.ie', '2018-11-26 20:29:02'),
+(10, 'craig', '14084800449265ee16a75ea7465d01b6', 'cblakeney@yahoo.com', '2018-11-26 20:32:37');
 
 --
 -- Indexes for dumped tables
@@ -102,7 +101,7 @@ ALTER TABLE `dvd_info`
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `userID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `userID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
