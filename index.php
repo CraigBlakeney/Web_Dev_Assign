@@ -15,7 +15,7 @@
 			<li> <a href="index.php">Home</a> </li>
 			<li> <a href="#Shop">Shop</a> </li>
 			<li> <a href="#My Favourites">My Favourites</a> </li>
-			<li> <a href="#register">Register</a> </li>
+			<li> <a href="register.php">Register</a> </li>
 			<li> <a href="Login_Page.php">Login</a> </li>
 			
 			<div id="searchBar">
@@ -23,19 +23,7 @@
 			</div>
 		</ul>
 	</header>
-	<?php
-			$servername = "localhost";
-			$username = "root";
-			$password = "";
-			$dbname = "test";
 
-			// Create connection
-			$conn = new mysqli($servername, $username, $password, $dbname);
-			// Check connection
-			if ($conn->connect_error) {
-				die("Connection failed: " . $conn->connect_error);
-			} 
-	?>
 
 	</body>
 </html>
