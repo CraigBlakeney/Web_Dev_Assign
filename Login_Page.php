@@ -1,4 +1,4 @@
-<?php include 'index.php'; ?>
+<?php include 'navbar.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +10,7 @@
 <?php
 require('config.php');
 session_start();
+
 // If form submitted, insert values into the database.
 if (isset($_POST['username'])){
         // removes backslashes
@@ -20,20 +21,18 @@ if (isset($_POST['username'])){
 	$password = mysqli_real_escape_string($con,$password);
 	//Checking is user existing in the database or not
         $query = "SELECT * FROM `userinfo` WHERE username='$username'
-and password='".md5($password)."'";
+and password= '".md5($password)."'";
 	$result = mysqli_query($con,$query) or die(mysql_error());
 	$rows = mysqli_num_rows($result);
-        if($rows==1){
-	    $_SESSION['username'] = $username;
-            // Redirect user to index.php
-	    header("Location: index.php");
-         }else{
-	echo "<div class='form'>
-<h3>Username/password is incorrect.</h3>
-<br/>Click here to <a href='Login_Page.php'>Login</a></div>";
-	}
-    }else{
-?>
+				if($rows==1){
+				$_SESSION['username'] = $username;
+					// Redirect user to index.php
+				header("Location: index.php");
+				 }else{
+					echo  "<div class='form'> <h3>Username/password is incorrect.</h3> <br/>Click here to <a href='Login_Page.php'>Login</a></div>";
+					}
+		}else{
+	?>
 <div class="form">
 <h1>Log In</h1>
 <form action="" method="post" name="login">
@@ -41,7 +40,7 @@ and password='".md5($password)."'";
 <input type="password" name="password" placeholder="Password" required />
 <input name="submit" type="submit" value="Login" />
 </form>
-<p>Not registered yet? <a href='registration.php'>Register Here</a></p>
+<p>Not registered yet? <a href='register.php'>Register Here</a></p>
 </div>
 <?php } ?>
 </body>
