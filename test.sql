@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2018 at 01:47 PM
+-- Generation Time: Nov 26, 2018 at 07:25 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -55,21 +55,21 @@ INSERT INTO `dvd_info` (`item_ID`, `m_Title`, `m_Genre`, `m_PG`) VALUES
 
 CREATE TABLE `userinfo` (
   `userID` int(4) NOT NULL,
+  `username` varchar(25) NOT NULL,
   `password` varchar(30) CHARACTER SET ascii NOT NULL,
-  `firstName` varchar(20) CHARACTER SET ascii NOT NULL,
-  `lastName` varchar(30) CHARACTER SET ascii NOT NULL,
-  `emailAddress` varchar(50) CHARACTER SET ascii NOT NULL,
-  `phoneNumber` int(10) DEFAULT NULL,
-  `joinDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `email` varchar(50) CHARACTER SET ascii NOT NULL,
+  `trn_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `userinfo`
 --
 
-INSERT INTO `userinfo` (`userID`, `password`, `firstName`, `lastName`, `emailAddress`, `phoneNumber`, `joinDate`) VALUES
-(1, 'qwerty123', 'Ryan', 'McManus', 'c16334863@mydit.ie', 871234567, '2018-11-22 14:50:07'),
-(2, 'ilovemeath', 'Craig', 'Blakeney', 'cblakeney@yahoo.com', 837568375, '2018-11-22 15:02:45');
+INSERT INTO `userinfo` (`userID`, `username`, `password`, `email`, `trn_date`) VALUES
+(1, 'mansey7', 'qwerty123', 'c16334863@mydit.ie', '2018-11-26 18:06:31'),
+(3, 'craig12', 'ae56989709b02c9f5f6e5f0ce83b37', 'cblakeney@yahoo.com', '2018-11-26 19:08:33'),
+(4, 'PaulDavis', '08fb2e5e0db264128bb2e7802a2b84', 'paulDavis@yahoo.ie', '2018-11-26 19:09:18'),
+(5, 'craig123', '912ec803b2ce49e4a541068d495ab5', 'cblakeney1@yahoo.com', '2018-11-26 19:23:15');
 
 --
 -- Indexes for dumped tables
@@ -85,7 +85,8 @@ ALTER TABLE `dvd_info`
 -- Indexes for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  ADD PRIMARY KEY (`userID`);
+  ADD PRIMARY KEY (`userID`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -101,7 +102,7 @@ ALTER TABLE `dvd_info`
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `userID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `userID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
