@@ -22,12 +22,14 @@ if (isset($_POST['newpassword'])){
      
 	 if($newpassword == $confirmpassword)
 	 {
-        $sql = mysql_query("UPDATE userinfo SET password='".md5($newpassword)."' where username='$username'");
+        $sql = mysqli_query($con,"UPDATE userinfo SET password='".md5($newpassword)."' where username='$username'");
+		if($sql){
 		echo "<p class='loginhelp'> Password Changed Successfully</p>";
+		}
 	 }
 	 else
-	 {
-		 echo "<p class='loginhelp'> Passwords do not match, please try again </p>";
+	 {	
+		 echo "<p class='loginhelp'> Passwords do not match, please try again <a href='pwrecovery1.php' class='loginhelp'>Click Here</a></p>";
 	 }
 	 
 }else{

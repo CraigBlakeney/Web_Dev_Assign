@@ -56,6 +56,10 @@ li a:hover:not(.active) {
 }
 .loginhelp{
 	color: yellow;
+	font-size: 20px;
 }
-
+.form{
+	display: block;
+	
+}
 

@@ -29,7 +29,7 @@ and password= '".md5($password)."'";
 					// Redirect user to index.php
 				header("Location: index.php");
 				 }else{
-					echo  "<div class='form'> <h3>Username/password is incorrect.</h3> <br/>Click here to <a href='Login_Page.php'>Login</a></div>";
+					echo  "<div class='loginhelp'> <h3>Username/password is incorrect.</h3> <br/>Click here to <a class='loginhelp' href='Login_Page.php'>Login</a></div>";
 					}
 		}else{
 	?>

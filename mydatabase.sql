@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2018 at 09:22 PM
+-- Generation Time: Nov 27, 2018 at 09:46 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -58,17 +58,25 @@ CREATE TABLE `userinfo` (
   `username` varchar(25) NOT NULL,
   `password` varchar(60) NOT NULL,
   `email` varchar(50) CHARACTER SET ascii NOT NULL,
-  `trn_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `trn_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `firstname` varchar(30) CHARACTER SET ascii DEFAULT NULL,
+  `lastname` varchar(30) CHARACTER SET ascii DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `userinfo`
 --
 
-INSERT INTO `userinfo` (`userID`, `username`, `password`, `email`, `trn_date`) VALUES
-(8, 'Phil', 'd14ffd41334ec4b4b3f2c0d55c38be6f', 'asdfsdfsdsd@yahoo.ioe', '2018-11-26 20:27:15'),
-(9, 'mansey7', '3fc0a7acf087f549ac2b266baf94b8b1', 'c16334863@mydit.ie', '2018-11-26 20:29:02'),
-(10, 'craig', '14084800449265ee16a75ea7465d01b6', 'cblakeney@yahoo.com', '2018-11-26 20:32:37');
+INSERT INTO `userinfo` (`userID`, `username`, `password`, `email`, `trn_date`, `firstname`, `lastname`) VALUES
+(8, 'Phil', 'd14ffd41334ec4b4b3f2c0d55c38be6f', 'asdfsdfsdsd@yahoo.ioe', '2018-11-26 20:27:15', NULL, NULL),
+(9, 'mansey7', '1bab52ef390fae4d54d64a4d7ea7cd26', 'c16334863@mydit.ie', '2018-11-27 18:25:34', NULL, NULL),
+(10, 'craig', 'e0323a9039add2978bf5b49550572c7c', 'cblakeney@yahoo.com', '2018-11-27 18:22:50', NULL, NULL),
+(11, 'paul', '6c63212ab48e8401eaf6b59b95d816a9', 'paul@yahoo.com', '2018-11-27 19:36:20', NULL, NULL),
+(12, 'luke', '46ecbec5ec7951ce102670dbd0b2def5', 'luke@yahoo.com', '2018-11-27 19:37:43', NULL, NULL),
+(14, 'sj', 'b5bf27b2555de44e3df2230080db5a1d', 'sj@yahoo.com', '2018-11-27 19:38:11', NULL, NULL),
+(15, 'q', 'b2ca678b4c936f905fb82f2733f5297f', 'q@yahoo.com', '2018-11-27 19:03:40', NULL, NULL),
+(16, 'tester', 'f5d1278e8109edd94e1e4197e04873b9', 'tester@yahoo.com', '2018-11-27 20:10:13', 'Ryan', 'McManus'),
+(17, 'luke34', '8466d1fc4dffd36097636ca8ca4983e4', 'luke34@yahoo.com', '2018-11-27 20:10:38', 'luke', '');
 
 --
 -- Indexes for dumped tables
@@ -101,7 +109,7 @@ ALTER TABLE `dvd_info`
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `userID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `userID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

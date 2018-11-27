@@ -25,11 +25,10 @@ and email= '$email'";
 	$result = mysqli_query($con,$query) or die(mysql_error());
 	$rows = mysqli_num_rows($result);
 				if($rows==1){
-				$_SESSION['username'] = $username;
-					// Redirect user to index.php
+				
 				header("Location: pwrecovery1.php");
 				 }else{
-					echo  "<div class='form'> <h3>Username/email is incorrect.</h3> <br/>Click here to <a href='register.php'>re-register</a></div>";
+					echo  "<div class='loginhelp'> <h3>Username/email is incorrect.</h3> <br/>Click here to <a class='loginhelp' href='register.php'>re-register</a></div>";
 					}
 		}else{
 	?>
