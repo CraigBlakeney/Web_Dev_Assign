@@ -8,7 +8,9 @@
 		<title>  </title>
 		
 	<body>
-		<p>Welcome <?php if(isset($_SESSION['username'])){
+		<p>Welcome <?php 
+		if(isset($_SESSION['username']))
+		{
 			echo $_SESSION['username'];
 		}else
 		{

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <?php include 'navbar.php'; ?>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -31,13 +31,13 @@ VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
     }else{
 ?>
 <div class="form">
-<h1>Registration</h1>
+<h2>Registration</h2>
 <form name="registration" action="" method="post">
-<p class="formtitle">Username : <input type="text" name="username" placeholder="Username" required /></p>
+<p class="formtitle">Username: <input type="text" name="username" placeholder="Username" required /></p>
 <br>
-<p class="formtitle">Email : <input type="email" name="email" placeholder="Email" required /></p>
+<p class="formtitle">Email: <input type="email" name="email" placeholder="Email" required /></p>
 <br>
-<p class="formtitle">Password : <input type="password" name="password" placeholder="Password" required /></p>
+<p class="formtitle">Password: <input type="password" name="password" placeholder="Password" required /></p>
 <br>
 <input type="submit" name="submit" value="Register" />
 </form>

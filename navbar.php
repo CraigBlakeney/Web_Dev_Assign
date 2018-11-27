@@ -2,25 +2,23 @@
 <html> 
 	<head>
 		<link id="pagestyle" href="index.css" rel="stylesheet" type="text/css" >
-		
-	</head>
-
 		<title>  </title>
 		
+	</head>
+	
 	<body>
+	<h1 id='mainhead'> Blockbuster </h1>
 	<header>
-		<h1> Blockbuster </h1>
-		
 		<ul>
-			<li> <a href="index.php">Home</a> </li>
+		<li> <a href="index.php">Home</a> </li>
 		<?php if(isset($_SESSION['username']))
 		{
-			echo "<li> <a href='logout.php'>Logout</a> </li>";
+			echo "<li class ='loginout'> <a href='logout.php'>Logout</a> </li>";
 			
 		}
 		else
 		{
-			echo "<li> <a href='register.php'>Register</a> </li> <li> <a href='Login_Page.php'>Login</a> </li>";
+			echo "<li class='loginout'> <a href='register.php'>Register</a> </li> <li class='loginout'> <a href='Login_Page.php'>Login</a> </li>";
 		}
 		?>
 			
@@ -28,6 +26,7 @@
 			<input type="text" placeholder="Search..">
 			</div>
 		</ul>
+		
 	</header>
 
 	</body>
