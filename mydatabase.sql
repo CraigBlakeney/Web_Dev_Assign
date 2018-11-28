@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2018 at 03:56 PM
+-- Generation Time: Nov 28, 2018 at 07:50 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -56,6 +56,17 @@ INSERT INTO `dvd_info` (`item_ID`, `m_Title`, `m_Genre`, `m_PG`, `image_code`) V
 (13, 'Insidious', 'Horror', 13, 'isd'),
 (14, 'Ralph Breaks the Internet', 'Comedy', 3, 'rbti'),
 (15, 'Instant Family', 'Comedy', 12, 'if');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `myfav`
+--
+
+CREATE TABLE `myfav` (
+  `userID` int(3) NOT NULL,
+  `item_ID` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 

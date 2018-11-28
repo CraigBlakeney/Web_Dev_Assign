@@ -6,7 +6,7 @@ body{
 	text-shadow: -1px -1px rgba(0,0,0,0.5), 1px 1px rgba(255,255,255,0.5);
 	text-align: center;
 	font-family:  Arial, Helvetica, sans-serif;
-	color: yellow;
+	color: #ffff66;
 
 }
 ul{
@@ -19,7 +19,7 @@ ul{
 	
 }
 h2{
-	color : yellow;
+	color : #ffff66;
 	font-family:  Arial;
 	text-shadow: -1px -1px rgba(0,0,0,0.5), 1px 1px rgba(255,255,255,0.5);
 }
@@ -39,7 +39,7 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: yellow;
+    background-color: #ffff66;
 	color: blue;
 }
 #searchBar{
@@ -55,7 +55,7 @@ li a:hover:not(.active) {
 	color: white;
 }
 .loginhelp{
-	color: yellow;
+	color: #ffff66;
 	font-size: 20px;
 }
 .form{
@@ -74,4 +74,24 @@ li a:hover:not(.active) {
 #pwchange{
 	
 	clear: left;
+}
+
+#panel, #flip{
+	padding: 5px;
+	text-align: center;
+	background-color: #ffff66;
+	border: solid 1px white;
+}
+
+#panel{
+	padding: 50px;
+	display: none;
+}
+
+.fadeinout{
+	text-align: center;
+	color:#ffff66;
+	position:absolute;
+    width:100%;
+    bottom:0;
 }

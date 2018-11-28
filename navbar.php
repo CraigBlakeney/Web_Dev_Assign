@@ -7,6 +7,7 @@
 		
 	</head>
 	
+	
 	<body>
 	<h1 id='mainhead'>Blockbuster </h1>
 	<header>
@@ -30,6 +31,9 @@
 			</div>
 		</ul>
 	</header>
-
+	
 	</body>
-</html>
+	
+	
+	</html>
+			
