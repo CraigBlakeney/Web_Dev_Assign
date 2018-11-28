@@ -21,7 +21,7 @@
 			if(isset($_SESSION['username'])){
 				echo'
 				<tr>
-			<td>  <input type="button" value="Add this to favourties" onclick=Add_to_Favourites(' . $item_id . ');>  </td>
+			<td>  <input type="button" value="Add this to favourties" onclick=Add_to_Favourites('. $item_id . ');>  </td>
 			</tr>
 					</table>
 					</div>';

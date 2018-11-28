@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2018 at 07:50 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Generation Time: Nov 28, 2018 at 08:17 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -64,9 +64,16 @@ INSERT INTO `dvd_info` (`item_ID`, `m_Title`, `m_Genre`, `m_PG`, `image_code`) V
 --
 
 CREATE TABLE `myfav` (
-  `userID` int(3) NOT NULL,
-  `item_ID` int(3) NOT NULL
+  `userID` int(4) NOT NULL,
+  `item_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `myfav`
+--
+
+INSERT INTO `myfav` (`userID`, `item_ID`) VALUES
+(11, 1);
 
 -- --------------------------------------------------------
 
@@ -91,7 +98,8 @@ CREATE TABLE `userinfo` (
 INSERT INTO `userinfo` (`userID`, `username`, `password`, `email`, `trn_date`, `firstname`, `lastname`) VALUES
 (8, 'Phil', 'd14ffd41334ec4b4b3f2c0d55c38be6f', 'asdfsdfsdsd@yahoo.ioe', '2018-11-26 20:27:15', NULL, NULL),
 (9, 'mansey7', '3fc0a7acf087f549ac2b266baf94b8b1', 'c16334863@mydit.ie', '2018-11-26 20:29:02', NULL, NULL),
-(10, 'craig', '14084800449265ee16a75ea7465d01b6', 'cblakeney@yahoo.com', '2018-11-26 20:32:37', NULL, NULL);
+(10, 'craig', '14084800449265ee16a75ea7465d01b6', 'cblakeney@yahoo.com', '2018-11-26 20:32:37', NULL, NULL),
+(11, 'tester', '7694f4a66316e53c8cdd9d9954bd611d', 'ryanmcmanus@yahoo.com', '2018-11-28 15:06:16', 'Ryan', 'McManus');
 
 --
 -- Indexes for dumped tables
@@ -124,7 +132,7 @@ ALTER TABLE `dvd_info`
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `userID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `userID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

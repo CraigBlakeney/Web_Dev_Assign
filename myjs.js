@@ -43,8 +43,8 @@ function DisplayDetails(){
 		}
 }
 
-function Add_to_Favourites(x){
+function Add_to_Favourites(x) {
 	
+	window.location.href = "updatemyfav.php?dvdid=" + x;
 	
-	window.location = "localhost/WDD/updatemyfav.php?msg=" + x;
 }
