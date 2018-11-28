@@ -1,5 +1,5 @@
 body{
-	background-color: blue;
+	background-color: #3366ff;
 }
 
 #mainhead{
@@ -63,3 +63,15 @@ li a:hover:not(.active) {
 	
 }
 
+#user_details{
+	float: right;
+	display: block;
+}
+#change_details{
+	float: left;
+	display: block;
+}
+#pwchange{
+	
+	clear: left;
+}

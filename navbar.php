@@ -25,12 +25,10 @@
 			echo "<li class='loginout'> <a href='register.php'>Register</a> </li> <li class='loginout'> <a href='Login_Page.php'>Login</a> </li>";
 		}
 		?>
-			
 			<div id="searchBar">
 			<input type="text" placeholder="Search.."><input name="submit" type="submit" value="Search" />
 			</div>
 		</ul>
-		
 	</header>
 
 	</body>
