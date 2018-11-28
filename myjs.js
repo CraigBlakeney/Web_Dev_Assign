@@ -27,3 +27,18 @@ function changePw(){
 			y.value = "Change Password";
 		}
 }
+
+function DisplayDetails(){
+	var x = document.getElementById("user_details");
+	var y = document.getElementById('display_Details');
+		
+		if(x.style.display === "none"){
+			x.style.display = "block";
+			y.value = "Hide User Details";
+		}
+		else{
+			
+			x.style.display ="none";
+			y.value = "Display User Details";
+		}
+}

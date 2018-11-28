@@ -1,6 +1,8 @@
 <?php session_start();  include 'navbar.php'?>
 
-<p id="user_details" class="loginhelp">
+
+<input id="display_Details" type = "button" value="Display User Details" onclick="DisplayDetails();" style="float:right">
+<p id="user_details" class="loginhelp" style="display:none" >
 <?php	
 		require('config.php');
 		$username = $_SESSION['username'];
@@ -14,13 +16,39 @@
 		}
 		?>
 		</p>
+		<?php
+		require('config.php');
+		// If form submitted, insert values into the database.
+		if (isset($_POST['email'])){
+        // removes backslashes
+		$currentusername = $_SESSION['username'];
+		$username = stripslashes($_REQUEST['username']);
+		$username = mysqli_real_escape_string($con,$username);
+		$email = stripslashes($_REQUEST['email']);
+		$email = mysqli_real_escape_string($con,$email);
+		$firstname = stripslashes($_REQUEST['firstname']);
+		$firstname = mysqli_real_escape_string($con,$firstname);
+		$lastname = stripslashes($_REQUEST['lastname']);
+		$lastname = mysqli_real_escape_string($con,$lastname);
+		$query = "Select * from userinfo where username ='$username'";
+		$result = mysqli_query($con,$query);
+		$rows = mysqli_num_rows($result);
+			if($rows==1){}
+		}
+		else
+		{ ?>
 		<br>
 		<div id="update_details">
 		<input id="displayform" type = "button" value = "Update Details" onclick ="DisplayForm();" >
 		<br>
 		<form id="change_details" name="Change Details" action="" method="post" style="display:none">
 		<br>
-		<p class="formtitle">*Email: <input type="email" name="email" placeholder="Email" required /></p>
+		<p class="formtitle">Email: <input type="email" name="email" placeholder="Email" required /></p>
+		<p class="formtitle">Username: <input type="text" name="Username" placeholder="Username" required /></p>
+		<p class="formtitle">First Name: <input type="text" name="firstname" placeholder="First Name" required /></p>
+		<p class="formtitle">Last Name: <input type="text" name="lastname" placeholder="Last Name" required /></p>
+		<?php } ?>
+		
 		<input type="submit" name="submit" value="Submit" />
 		</form>
 		</div>
