@@ -42,3 +42,9 @@ function DisplayDetails(){
 			y.value = "Display User Details";
 		}
 }
+
+function Add_to_Favourites(x){
+	
+	
+	window.location = "localhost/WDD/updatemyfav.php?msg=" + x;
+}
