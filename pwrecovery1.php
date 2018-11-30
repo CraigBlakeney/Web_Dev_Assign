@@ -19,7 +19,9 @@ if (isset($_POST['newpassword'])){
 	$newpassword = mysqli_real_escape_string($con,$newpassword);
 	$confirmpassword = stripslashes($_REQUEST['confirmpassword']);
 	$confirmpassword = mysqli_real_escape_string($con,$confirmpassword);
-     
+    $result = mysqli_query($con,"select * from userinfo where username= '$username'");
+	$row = mysqli_num_rows($result);
+	if($row==1){
 	 if($newpassword == $confirmpassword)
 	 {
         $sql = mysqli_query($con,"UPDATE userinfo SET password='".md5($newpassword)."' where username='$username'");
@@ -31,7 +33,11 @@ if (isset($_POST['newpassword'])){
 	 {	
 		 echo "<p class='loginhelp'> Passwords do not match, please try again <a href='pwrecovery1.php' class='loginhelp'>Click Here</a></p>";
 	 }
-	 
+	}
+	else
+	{
+		echo "<p class='loginhelp'>Incorrect username entered</p>";
+	}
 }else{
 	?>
 <div class="form">

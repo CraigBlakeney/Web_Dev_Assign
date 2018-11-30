@@ -95,3 +95,12 @@ li a:hover:not(.active) {
     width:100%;
     bottom:0;
 }
+
+.product{
+	width:210px;
+	height: 300px;
+	border: 1px solid #c9c5c5;
+	text-align: center;
+	display: inline-block;
+	margin: 5px;
+}

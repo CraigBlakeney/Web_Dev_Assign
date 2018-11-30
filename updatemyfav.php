@@ -1,6 +1,9 @@
 <?php session_start();  include 'navbar.php'?>
 <?php
 	require('config.php');
+	
+	if(isset($_GET['dvdid']))
+	{
 	$item_ID= $_GET['dvdid'];
 	$username= $_SESSION['username'];
 	$query="SELECT userID from userinfo where username ='$username'";
@@ -26,6 +29,26 @@
 	$result = mysqli_query($con,$query);
 	header("Location: store.php");
 	}
+	}
+	else
+	{
+	
+	$item_ID= $_GET['dvd_id'];
+	$username= $_SESSION['username'];
+	$query = "SELECT * from userinfo where username = '$username'";
+	$result1 = mysqli_query($con,$query);
+		if(mysqli_num_rows($result1))
+		{
+			while($row = mysqli_fetch_assoc($result1)){
+			$userID = $row['userID'];
+		}
 
-
+			$query3 = "DELETE FROM myfav WHERE userID = '$userID' AND item_ID = '$item_ID'";
+			$result2 = mysqli_query($con,$query3);
+			
+			header("Location: myfavs.php");
+				
+		}
+	
+	}
 ?>

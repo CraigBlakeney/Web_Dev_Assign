@@ -42,9 +42,30 @@ function DisplayDetails(){
 			y.value = "Display User Details";
 		}
 }
+function DeleteProfile(){
+	var x = document.getElementById("delete_profile");
+	var y = document.getElementById('deletepro');
+		
+		if(x.style.display === "none"){
+			x.style.display = "block";
+			y.value = "No Come Back!!!";
+		}
+		else{
+			
+			x.style.display ="none";
+			y.value = "Delete Profile";
+		}
+}
+
 
 function Add_to_Favourites(x) {
 	
 	window.location.href = "updatemyfav.php?dvdid=" + x;
+	
+}
+
+function Remove_from_Favourites(x) {
+
+	window.location.href = "updatemyfav.php?dvd_id=" + x;
 	
 }

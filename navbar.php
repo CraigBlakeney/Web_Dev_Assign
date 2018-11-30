@@ -2,14 +2,15 @@
 <html> 
 	<head>
 		<link id="pagestyle" href="index.css" rel="stylesheet" type="text/css" >
-		 <script type="text/javascript" src="myjs.js"></script>
+		<script type="text/javascript" src="myjs.js"></script>
+		<link rel="stylesheet" href="index.css"/>
 		<title>  </title>
 		
 	</head>
 	
 	
 	<body>
-	<h1 id='mainhead'>Blockbuster </h1>
+	<h1 id='mainhead'>Blockbuster</h1>
 	<header>
 		<ul>
 		<li> <a href="index.php">Home</a> </li>
@@ -27,7 +28,10 @@
 		}
 		?>
 			<div id="searchBar">
-			<input type="text" placeholder="Search.."><input name="submit" type="submit" value="Search" />
+				<form action="results.php" method="get">
+					<input type="text" name="searchitem" placeholder="Search..">
+					<button type="submit">Search</button>
+				</form>
 			</div>
 		</ul>
 	</header>

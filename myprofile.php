@@ -85,7 +85,8 @@
 					else{
 						echo "<p class='loginhelp'>Incorrect Old Password entered </p> ";
 					}
-		}else{
+		}else
+		{
 			?>
 		<div id="pwchange">
 		<input id="changepw_button" type="button" value="Change Password" onclick="changePw();">
@@ -97,3 +98,26 @@
 		</form>
 		</div>
 		<?php } ?>
+		<br>
+		
+		<?php
+		require('config.php');
+		
+		if(isset($_POST['dpassword']))
+		{
+			$username = $_SESSION['username'];
+			$query = "DELETE FROM userinfo where username= '$username'";
+			$result = mysqli_query($con,$query);
+			session_destroy();
+			header ("location: index.php");
+			
+		}else
+		{
+		?>
+		<input id="deletepro" type="button" value="Delete Profile" onclick="DeleteProfile();">
+		<form id="delete_profile" name="Delete Profile" action="" method="post" style="display:none">
+		<p class="formtitle">Password: <input type="password" name="dpassword" placeholder="Password" required /></p>
+			<input type="submit" name="submit" value="Submit" />
+		</form>
+		<?php } ?>
+		

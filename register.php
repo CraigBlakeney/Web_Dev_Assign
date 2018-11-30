@@ -31,8 +31,11 @@ VALUES ('$username', '".md5($password)."', '$email', '$trn_date', '$firstname', 
             echo "<div class='loginhelp'>
 <h3>You are registered successfully.</h3>
 <br/>Click here to <a class='loginhelp' href='login_page.php'>Login</a></div>";
-        }
-    }else{
+        }else{
+			echo "<p class= 'loginhelp'>Username or Email has already been taken, please try again</p>";
+		}
+    }
+	else{
 ?>
 <div class="form">
 <h2>Registration</h2>

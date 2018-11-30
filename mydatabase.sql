@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2018 at 08:17 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Generation Time: Nov 30, 2018 at 03:01 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -73,7 +73,10 @@ CREATE TABLE `myfav` (
 --
 
 INSERT INTO `myfav` (`userID`, `item_ID`) VALUES
-(11, 1);
+(11, 1),
+(9, 1),
+(9, 2),
+(9, 14);
 
 -- --------------------------------------------------------
 
