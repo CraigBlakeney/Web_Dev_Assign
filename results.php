@@ -15,6 +15,7 @@
 		if($row >0 ){
 		while($row = mysqli_fetch_array($result))
 		{
+			$item_id = $row['item_ID'];
 			
 			echo"
 				<div class = 'col-sm-4'>
@@ -24,7 +25,12 @@
 	
 								" . $row['m_Title'] . "
 								" . $row['m_Genre'] . "
-								" . $row['m_PG'] . "
+								" . $row['m_PG'] . " <br>";
+								if(isset($_SESSION['username'])){
+								echo"
+								<td>  <input type='button' value='Add this to favourties' onclick=Add_to_Favourites(". $item_id . ");>  </td>
+								";}
+								echo"
 								</div>
 							</div>
 						</div>

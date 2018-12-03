@@ -5,16 +5,19 @@
 
 <?php 
 //gets the userID and then checks the myfav table for any rows with the same userID and then displays the content
-$counter = 2;
+ $counter = 2;
  require 'config.php';
  $username = $_SESSION['username'];
+ //finds userID for current user
  $query = "SELECT userID from userinfo where username= '$username'";
  $result = mysqli_query($con,$query);
  $row1 = mysqli_fetch_array($result);
  $userID = $row1['userID'];
+ //finds any favourites from mfav table with matching userid
  $result1 = mysqli_query($con,"SELECT * from myfav where userID = '$userID'");
 		while($rows = mysqli_fetch_array($result1)){
 			$item_ID = $rows['item_ID'];
+			//gets all dvdinfo for the dvds which user has favourited and displays 1 by 1
 			$result2 = mysqli_query($con,"SELECT * from dvd_info where item_ID= '$item_ID'");
 					while($row = mysqli_fetch_array($result2))
 				{
