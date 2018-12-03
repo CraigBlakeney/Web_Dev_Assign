@@ -1,12 +1,7 @@
 <?php include 'navbar.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
+
 <title>Registration</title>
-<link rel="stylesheet" href="index.css" />
-</head>
-<body>
+
 <?php
 require('config.php');
 // If form submitted, insert values into the database.
@@ -31,12 +26,16 @@ VALUES ('$username', '".md5($password)."', '$email', '$trn_date', '$firstname', 
             echo "<div class='loginhelp'>
 <h3>You are registered successfully.</h3>
 <br/>Click here to <a class='loginhelp' href='login_page.php'>Login</a></div>";
-        }else{
+        }else
+		//error message that username or email is already taken
+		{
 			echo "<p class= 'loginhelp'>Username or Email has already been taken, please try again</p>";
 		}
     }
 	else{
 ?>
+
+<!--Registration form -->
 <div class="form">
 <h2>Registration</h2>
 <form name="registration" action="" method="post">
@@ -55,5 +54,3 @@ VALUES ('$username', '".md5($password)."', '$email', '$trn_date', '$firstname', 
 </form>
 </div>
 <?php } ?>
-</body>
-</html>

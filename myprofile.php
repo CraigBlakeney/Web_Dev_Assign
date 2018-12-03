@@ -40,9 +40,9 @@
 		{ ?>
 		<br>
 		<div id="update_details">
-		<input id="displayform" type = "button" value = "Update Details" onclick ="DisplayForm();" >
+		<input id="displayform" type = "button" value = "Hide Details Form" onclick ="DisplayForm();" >
 		<br>
-		<form id="change_details" name="Change Details" action="" method="post" style="display:none">
+		<form id="change_details" name="Change Details" action="" method="post" style="display:block">
 		<br>
 		<p class="formtitle">Email: <input type="email" name="email" placeholder="Email" required /></p>
 		
@@ -92,8 +92,8 @@
 		{
 			?>
 		<div id="pwchange">
-		<input id="changepw_button" type="button" value="Change Password" onclick="changePw();">
-		<form id="change_pw" name="Change Password" action="" method="post" style="display:none">
+		<input id="changepw_button" type="button" value="Hide Change Password Form" onclick="changePw();">
+		<form id="change_pw" name="Change Password" action="" method="post" style="display:block">
 		<p class="formtitle">Old Password: <input type="password" name="oldpassword" placeholder="Old Password" required /></p>
 		<p class="formtitle">New Password: <input type="password" name="newpassword" placeholder="New Password" required /></p>
 		<p class="formtitle">Confirm Password: <input type="password" name="confirmpassword" placeholder="Re-enter new Password" required /></p>

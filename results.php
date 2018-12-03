@@ -1,10 +1,11 @@
 <?php session_start(); include 'navbar.php';?>
-	
+	<!--Bootstrap for styling results -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="index.css"/>
-
+<!--Displays the results of users search  -->
 <?php
-		$searchitem =$_GET['searchitem'];
+		$searchitem = $_GET['searchitem'];
+		//uses % to check all of the string for matches , even inside the string
 		$query = "Select * from dvd_info
 				Where lower(m_Title) like lower ('%$searchitem%')
 				OR lower(m_Genre) like lower ('%$searchitem%')
@@ -30,7 +31,7 @@
 					</div>
 			";
 		}}
-		else
+		else //error message no matches found
 		{
 			echo "<p class='loginhelp'> No results found to match the search criteria </p>";
 		}

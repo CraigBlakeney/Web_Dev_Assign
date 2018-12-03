@@ -1,3 +1,4 @@
+//First 3 Functions are used to hide and display the relevant forms on he myprofile page
 function DisplayForm(){
 	var x = document.getElementById("change_details");
 	var y = document.getElementById('displayform');
@@ -28,20 +29,7 @@ function changePw(){
 		}
 }
 
-function DisplayDetails(){
-	var x = document.getElementById("user_details");
-	var y = document.getElementById('display_Details');
-		
-		if(x.style.display === "none"){
-			x.style.display = "block";
-			y.value = "Hide User Details";
-		}
-		else{
-			
-			x.style.display ="none";
-			y.value = "Display User Details";
-		}
-}
+
 function DeleteProfile(){
 	var x = document.getElementById("delete_profile");
 	var y = document.getElementById('deletepro');
@@ -57,7 +45,7 @@ function DeleteProfile(){
 		}
 }
 
-
+//two functions which pass a variable containing the dvd_id to the update favourites 
 function Add_to_Favourites(x) {
 	
 	window.location.href = "updatemyfav.php?dvdid=" + x;
