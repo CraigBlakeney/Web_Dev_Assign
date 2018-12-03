@@ -1,4 +1,4 @@
-<?php include 'index.php'; ?>	
+<?php /* include 'index.php'; ?>	
 	<?php
 		$usr = mysql_real_escape_string($_POST['username']); 
 		$pas = hash('sha256', mysql_real_escape_string($_POST['password'])); 
@@ -25,4 +25,4 @@
     exit; 
 	} 
 	echo 'Welcome, '.$_SESSION['username']; 
-	?> 
+	*/?> 

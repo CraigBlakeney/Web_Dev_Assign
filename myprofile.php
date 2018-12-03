@@ -1,8 +1,8 @@
 <?php session_start();  include 'navbar.php'?>
 
 
-<input id="display_Details" type = "button" value="Display User Details" onclick="DisplayDetails();" style="float:right">
-<p id="user_details" class="loginhelp" style="display:none" >
+<!--PHP which accesses the users details and echos them onto the page -->
+<p id="user_details" class="loginhelp">
 <?php	
 		require('config.php');
 		$username = $_SESSION['username'];
@@ -16,11 +16,11 @@
 		}
 		?>
 		</p>
+		<!--Updating the user info -->
 		<?php
 		require('config.php');
-		// If form submitted, insert values into the database.
+		//Checks if the user has submitted the form if not it displays the form
 		if (isset($_POST['email'])){
-        // removes backslashes
 		$username = $_SESSION['username'];
 		$email = stripslashes($_REQUEST['email']);
 		$email = mysqli_real_escape_string($con,$email);
@@ -49,18 +49,19 @@
 		<p class="formtitle">First Name: <input type="text" name="firstname" placeholder="First Name" required /></p>
 		<p class="formtitle">Last Name: <input type="text" name="lastname" placeholder="Last Name" required /></p>
 		<?php } ?>
-		
 		<input type="submit" name="submit" value="Submit" />
 		</form>
 		</div>
 		<br>
 		<?php
 		require('config.php');
-		// If form submitted, insert values into the database.
+		// Checks if user has submitted the change password form if not it displays the from
 		if (isset($_POST['oldpassword'])){
-        // removes backslashes
+        //sets the username to current session username
 		$username = $_SESSION['username'];
+		//strips any slashes from user input
 		$oldpassword = stripslashes($_REQUEST['oldpassword']);
+		//takes out any special characters from user input, this avoids sql injection
 		$oldpassword = mysqli_real_escape_string($con,$oldpassword);
 		$newpassword = stripslashes($_REQUEST['newpassword']);
 		$newpassword = mysqli_real_escape_string($con,$newpassword);
@@ -69,7 +70,9 @@
 		$query = "Select * from userinfo where username ='$username' and password='".md5($oldpassword)."'";
 		$result = mysqli_query($con,$query);
 		$rows = mysqli_num_rows($result);
+		//chekcs if everything matches
 			 if($rows==1){
+							//ensures both passwords match
 							 if($newpassword == $confirmpassword)
 							 {
 								$sql = mysqli_query($con,"UPDATE userinfo SET password='".md5($newpassword)."' where username='$username'");
@@ -102,7 +105,7 @@
 		
 		<?php
 		require('config.php');
-		
+		//deletes the user upon confirmation of password
 		if(isset($_POST['dpassword']))
 		{
 			$username = $_SESSION['username'];

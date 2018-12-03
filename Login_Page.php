@@ -1,17 +1,12 @@
 <?php include 'navbar.php';?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
+
 <title>Login</title>
-<link rel="stylesheet" href="index.css" />
-</head>
-<body>
+
+
 <?php
 require('config.php');
 session_start();
 
-// If form submitted, insert values into the database.
 if (isset($_POST['username'])){
         // removes backslashes
 	$username = stripslashes($_REQUEST['username']);
@@ -44,5 +39,3 @@ and password= '".md5($password)."'";
 <p ><a class="loginhelp" href='pwrecovery.php'>Forgot Password?</a></p>
 </div>
 <?php } ?>
-</body>
-</html>

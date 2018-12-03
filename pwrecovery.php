@@ -1,12 +1,7 @@
 <?php include 'navbar.php';?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
+
 <title>Password Recovery</title>
-<link rel="stylesheet" href="index.css" />
-</head>
-<body>
+
 <?php
 require('config.php');
 session_start();
@@ -19,7 +14,7 @@ if (isset($_POST['username'])){
 	$username = mysqli_real_escape_string($con,$username);
 	$email = stripslashes($_REQUEST['email']);
 	$email = mysqli_real_escape_string($con,$email);
-	//Checking is user existing in the database or not
+	//Checking if user used correct username and email to confirm registration
         $query = "SELECT * FROM `userinfo` WHERE username='$username'
 and email= '$email'";
 	$result = mysqli_query($con,$query) or die(mysql_error());
@@ -41,5 +36,3 @@ and email= '$email'";
 </form>
 </div>
 <?php } ?>
-</body>
-</html>

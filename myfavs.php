@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="index.css"/>
 
 <?php 
+//gets the userID and then checks the myfav table for any rows with the same userID and then displays the content
 $counter = 2;
  require 'config.php';
  $username = $_SESSION['username'];

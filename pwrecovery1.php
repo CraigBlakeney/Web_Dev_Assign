@@ -1,12 +1,7 @@
 <?php include 'navbar.php';?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
+
 <title>Change Password</title>
-<link rel="stylesheet" href="index.css" />
-</head>
-<body>
+
 <?php
 require('config.php');
 session_start();
@@ -21,19 +16,24 @@ if (isset($_POST['newpassword'])){
 	$confirmpassword = mysqli_real_escape_string($con,$confirmpassword);
     $result = mysqli_query($con,"select * from userinfo where username= '$username'");
 	$row = mysqli_num_rows($result);
-	if($row==1){
-	 if($newpassword == $confirmpassword)
-	 {
-        $sql = mysqli_query($con,"UPDATE userinfo SET password='".md5($newpassword)."' where username='$username'");
-		if($sql){
-		echo "<p class='loginhelp'> Password Changed Successfully</p>";
-		}
-	 }
-	 else
-	 {	
-		 echo "<p class='loginhelp'> Passwords do not match, please try again <a href='pwrecovery1.php' class='loginhelp'>Click Here</a></p>";
-	 }
-	}
+	
+	if($row==1)
+	{
+		
+		//updates the users password if both are correct
+			 if($newpassword == $confirmpassword)
+			 {
+				$sql = mysqli_query($con,"UPDATE userinfo SET password='".md5($newpassword)."' where username='$username'");
+				if($sql){
+				echo "<p class='loginhelp'> Password Changed Successfully</p>";
+				}
+			 }
+			 else
+				 //if passwords didnt match
+			 {	
+				 echo "<p class='loginhelp'> Passwords do not match, please try again <a href='pwrecovery1.php' class='loginhelp'>Click Here</a></p>";
+			 }
+	}//if username didnt match any in system
 	else
 	{
 		echo "<p class='loginhelp'>Incorrect username entered</p>";
@@ -50,5 +50,3 @@ if (isset($_POST['newpassword'])){
 </form>
 </div>
 <?php } ?>
-</body>
-</html>

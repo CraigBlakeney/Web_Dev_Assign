@@ -1,6 +1,7 @@
 <?php session_start(); include 'navbar.php';?>
 
-
+<!--This page displays the store for both logged in users and guests-->
+<!--Bootstrap is used to style the page -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="index.css"/>
 <?php
@@ -13,7 +14,7 @@
 	{
 		
 			$item_id = $row['item_ID'];
-			
+			//Counter to only display 3 movies in a row
 			if($counter == 3)
 			{
 				echo'<div class="container">';
@@ -32,6 +33,7 @@
 								" . $row['m_Genre'] . "
 								" . $row['m_PG'] . "
 								<br>";
+								//Displays the add to favourites option for logged in users
 								if(isset($_SESSION['username'])){
 								echo"
 								<td>  <input type='button' value='Add this to favourties' onclick=Add_to_Favourites(". $item_id . ");>  </td>
